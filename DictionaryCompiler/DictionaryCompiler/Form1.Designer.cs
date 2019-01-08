@@ -34,7 +34,7 @@
             this.langBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.langTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.openConfigBtn = new MaterialSkin.Controls.MaterialFlatButton();
+            this.openKeyConfigBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.openWordsFileBtn = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.compileBtn = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -108,7 +108,7 @@
             this.tabPage1.Controls.Add(this.langBtn);
             this.tabPage1.Controls.Add(this.materialLabel9);
             this.tabPage1.Controls.Add(this.langTextBox);
-            this.tabPage1.Controls.Add(this.openConfigBtn);
+            this.tabPage1.Controls.Add(this.openKeyConfigBtn);
             this.tabPage1.Controls.Add(this.openWordsFileBtn);
             this.tabPage1.Controls.Add(this.materialLabel8);
             this.tabPage1.Controls.Add(this.compileBtn);
@@ -135,6 +135,7 @@
             this.tabPage1.Size = new System.Drawing.Size(718, 314);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Settings";
+            this.tabPage1.Click += new System.EventHandler(this.openConfigBtn_Click);
             // 
             // materialRaisedButton1
             // 
@@ -190,21 +191,21 @@
             this.langTextBox.TabIndex = 31;
             this.langTextBox.UseSystemPasswordChar = false;
             // 
-            // openConfigBtn
+            // openKeyConfigBtn
             // 
-            this.openConfigBtn.AutoSize = true;
-            this.openConfigBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.openConfigBtn.Depth = 0;
-            this.openConfigBtn.Location = new System.Drawing.Point(376, 254);
-            this.openConfigBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.openConfigBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.openConfigBtn.Name = "openConfigBtn";
-            this.openConfigBtn.Primary = false;
-            this.openConfigBtn.Size = new System.Drawing.Size(100, 36);
-            this.openConfigBtn.TabIndex = 30;
-            this.openConfigBtn.Text = "Open config";
-            this.openConfigBtn.UseVisualStyleBackColor = true;
-            this.openConfigBtn.Click += new System.EventHandler(this.openConfigBtn_Click);
+            this.openKeyConfigBtn.AutoSize = true;
+            this.openKeyConfigBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.openKeyConfigBtn.Depth = 0;
+            this.openKeyConfigBtn.Location = new System.Drawing.Point(376, 254);
+            this.openKeyConfigBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.openKeyConfigBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.openKeyConfigBtn.Name = "openKeyConfigBtn";
+            this.openKeyConfigBtn.Primary = false;
+            this.openKeyConfigBtn.Size = new System.Drawing.Size(114, 36);
+            this.openKeyConfigBtn.TabIndex = 30;
+            this.openKeyConfigBtn.Text = "Open keys file";
+            this.openKeyConfigBtn.UseVisualStyleBackColor = true;
+            this.openKeyConfigBtn.Click += new System.EventHandler(this.openConfigBtn_Click);
             // 
             // openWordsFileBtn
             // 
@@ -252,6 +253,7 @@
             // 
             this.meaningCheck.AutoSize = true;
             this.meaningCheck.Depth = 0;
+            this.meaningCheck.Enabled = false;
             this.meaningCheck.Font = new System.Drawing.Font("Roboto", 10F);
             this.meaningCheck.Location = new System.Drawing.Point(180, 254);
             this.meaningCheck.Margin = new System.Windows.Forms.Padding(0);
@@ -268,6 +270,7 @@
             // 
             this.pronCheck.AutoSize = true;
             this.pronCheck.Depth = 0;
+            this.pronCheck.Enabled = false;
             this.pronCheck.Font = new System.Drawing.Font("Roboto", 10F);
             this.pronCheck.Location = new System.Drawing.Point(180, 284);
             this.pronCheck.Margin = new System.Windows.Forms.Padding(0);
@@ -621,11 +624,11 @@
             // viewBtn
             // 
             this.viewBtn.Depth = 0;
-            this.viewBtn.Location = new System.Drawing.Point(497, 292);
+            this.viewBtn.Location = new System.Drawing.Point(532, 278);
             this.viewBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.viewBtn.Name = "viewBtn";
             this.viewBtn.Primary = true;
-            this.viewBtn.Size = new System.Drawing.Size(88, 22);
+            this.viewBtn.Size = new System.Drawing.Size(75, 36);
             this.viewBtn.TabIndex = 33;
             this.viewBtn.Text = "View";
             this.viewBtn.UseVisualStyleBackColor = true;
@@ -635,6 +638,7 @@
             // 
             this.xlsxCheck.AutoSize = true;
             this.xlsxCheck.Depth = 0;
+            this.xlsxCheck.Enabled = false;
             this.xlsxCheck.Font = new System.Drawing.Font("Roboto", 10F);
             this.xlsxCheck.Location = new System.Drawing.Point(151, 281);
             this.xlsxCheck.Margin = new System.Windows.Forms.Padding(0);
@@ -888,7 +892,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton viewBtn;
         private MaterialSkin.Controls.MaterialCheckBox xlsxCheck;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
-        private MaterialSkin.Controls.MaterialFlatButton openConfigBtn;
+        private MaterialSkin.Controls.MaterialFlatButton openKeyConfigBtn;
         private MaterialSkin.Controls.MaterialFlatButton openWordsFileBtn;
         private MaterialSkin.Controls.MaterialRaisedButton langBtn;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
