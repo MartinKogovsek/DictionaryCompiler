@@ -30,6 +30,7 @@
         {
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.langBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.langTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -57,7 +58,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.progressBar = new CircularProgressBar.CircularProgressBar();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.overwriteCheck = new MaterialSkin.Controls.MaterialCheckBox();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.outputNameTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -104,6 +104,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.materialRaisedButton1);
             this.tabPage1.Controls.Add(this.langBtn);
             this.tabPage1.Controls.Add(this.materialLabel9);
             this.tabPage1.Controls.Add(this.langTextBox);
@@ -134,6 +135,19 @@
             this.tabPage1.Size = new System.Drawing.Size(718, 314);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Settings";
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(552, 278);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(75, 36);
+            this.materialRaisedButton1.TabIndex = 38;
+            this.materialRaisedButton1.Text = "Open in browser";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click_1);
             // 
             // langBtn
             // 
@@ -224,11 +238,11 @@
             // compileBtn
             // 
             this.compileBtn.Depth = 0;
-            this.compileBtn.Location = new System.Drawing.Point(590, 278);
+            this.compileBtn.Location = new System.Drawing.Point(633, 278);
             this.compileBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.compileBtn.Name = "compileBtn";
             this.compileBtn.Primary = true;
-            this.compileBtn.Size = new System.Drawing.Size(118, 36);
+            this.compileBtn.Size = new System.Drawing.Size(75, 36);
             this.compileBtn.TabIndex = 27;
             this.compileBtn.Text = "compile";
             this.compileBtn.UseVisualStyleBackColor = true;
@@ -506,7 +520,7 @@
             this.progressBar.BackColor = System.Drawing.Color.Transparent;
             this.progressBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.progressBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.progressBar.InnerColor = System.Drawing.Color.DimGray;
+            this.progressBar.InnerColor = System.Drawing.Color.White;
             this.progressBar.InnerMargin = 2;
             this.progressBar.InnerWidth = -1;
             this.progressBar.Location = new System.Drawing.Point(270, 128);
@@ -535,7 +549,6 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
-            this.tabPage3.Controls.Add(this.materialRaisedButton1);
             this.tabPage3.Controls.Add(this.overwriteCheck);
             this.tabPage3.Controls.Add(this.materialLabel10);
             this.tabPage3.Controls.Add(this.outputNameTextBox);
@@ -557,19 +570,6 @@
             this.tabPage3.Size = new System.Drawing.Size(718, 314);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Data";
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(359, 292);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(132, 22);
-            this.materialRaisedButton1.TabIndex = 37;
-            this.materialRaisedButton1.Text = "Open in browser";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // overwriteCheck
             // 
@@ -833,6 +833,7 @@
             this.Controls.Add(this.materialDivider3);
             this.Name = "Form1";
             this.Sizable = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dictionary Compiler";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.materialTabControl1.ResumeLayout(false);

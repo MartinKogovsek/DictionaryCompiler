@@ -58,10 +58,17 @@ namespace DictionaryCompiler
 
         public static List<string> GatherWords(string path)
         {
-            List<string> list = new List<string>();
-            list = File.ReadAllLines(path).ToList();
-            return list;
-
+            try
+            {
+                List<string> list = new List<string>();
+                list = File.ReadAllLines(path).ToList();
+                return list;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return null;
+            }
         }
 
         public static void CheckFile(string file)

@@ -21,10 +21,6 @@ namespace DictionaryCompiler
         public KeysForm()
         {
             InitializeComponent();
-            var skinManager = MaterialSkinManager.Instance;
-            skinManager.AddFormToManage(this);
-            skinManager.Theme = MaterialSkinManager.Themes.DARK;
-            skinManager.ColorScheme = new ColorScheme(Primary.LightBlue800, Primary.LightBlue900, Primary.LightBlue500, Accent.LightBlue200, TextShade.WHITE);
         }
 
         private void KeysForm_Load(object sender, EventArgs e)

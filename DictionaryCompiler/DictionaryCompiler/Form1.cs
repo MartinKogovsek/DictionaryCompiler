@@ -309,12 +309,22 @@ namespace DictionaryCompiler
             aboutForm.ShowDialog();
         }
 
-        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        private void materialRaisedButton1_Click_1(object sender, EventArgs e)
         {
-            List<string> list = MiscFunctions.GatherWords(inputTextBox.Text);
-            foreach (var item in list)
+            MessageBox.Show("Open a new instance of your browser!");
+            List<string> list = new List<string>();
+            list = MiscFunctions.GatherWords(inputTextBox.Text);
+            if (File.Exists(inputTextBox.Text))
             {
-                Process.Start("https://translate.google.com/#view=home&op=translate&sl=en&tl=sl&text=" + item);
+                if (list.Count == 0)
+                    MessageBox.Show("Words list is empty!");
+                else
+                {
+                    foreach (var item in list)
+                    {
+                        Process.Start("https://translate.google.com/#view=home&op=translate&sl=en&tl=sl&text=" + item);
+                    }
+                }
             }
         }
     }
