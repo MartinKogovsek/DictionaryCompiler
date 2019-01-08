@@ -18,7 +18,7 @@ namespace DictionaryCompiler
         public string ConcatenateProperties()
         {
             string ret = WordCount + EngWord + SloWord + Meaning + Pron + UrlText;
-            ret = ret.Substring(0, ret.Length - 2);
+            ret = ret.Substring(0, ret.Length - 1);
             return ret;
         }
     }

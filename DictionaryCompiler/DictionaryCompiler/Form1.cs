@@ -56,6 +56,14 @@ namespace DictionaryCompiler
                 PathIn = inputTextBox.Text;
                 ApiKeyConst = apiKeyTextBox.Text;
 
+                includeStatus.CountCheck = false;
+                includeStatus.OrderCheck = false;
+                includeStatus.EngWordsCheck = false;
+                includeStatus.SloWordsCheck = false;
+                includeStatus.MeaningCheck = false;
+                includeStatus.PronCheck = false;
+                includeStatus.UrlCheck = false;
+
                 if (countCheck.Checked == true)
                     includeStatus.CountCheck = true;
                 if (orderCheck.Checked == true)

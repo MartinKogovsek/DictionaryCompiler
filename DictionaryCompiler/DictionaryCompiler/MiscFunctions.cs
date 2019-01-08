@@ -62,6 +62,7 @@ namespace DictionaryCompiler
             {
                 List<string> list = new List<string>();
                 list = File.ReadAllLines(path).ToList();
+                list = list.ConvertAll(low => low.ToLowerInvariant());
                 return list;
             }
             catch (Exception ex)
