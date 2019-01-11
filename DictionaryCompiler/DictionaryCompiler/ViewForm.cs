@@ -23,7 +23,12 @@ namespace DictionaryCompiler
 
         private void View_Load(object sender, EventArgs e)
         {
-            dataGridView1.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders);
+            int sir = 60;
+            for (int i = 0; i < dataGridView1.ColumnCount; i++)
+            {
+                sir += dataGridView1.Columns[i].Width;
+            }
+            this.Width= sir;
         }
     }
 }

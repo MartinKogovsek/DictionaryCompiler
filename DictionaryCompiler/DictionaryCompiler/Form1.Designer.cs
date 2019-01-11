@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -135,7 +136,6 @@
             this.tabPage1.Size = new System.Drawing.Size(718, 314);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Settings";
-            this.tabPage1.Click += new System.EventHandler(this.openConfigBtn_Click);
             // 
             // materialRaisedButton1
             // 
@@ -189,6 +189,7 @@
             this.langTextBox.SelectionStart = 0;
             this.langTextBox.Size = new System.Drawing.Size(524, 23);
             this.langTextBox.TabIndex = 31;
+            this.langTextBox.Text = "Slovenian";
             this.langTextBox.UseSystemPasswordChar = false;
             // 
             // openKeyConfigBtn
@@ -835,6 +836,7 @@
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialTabControl1);
             this.Controls.Add(this.materialDivider3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
