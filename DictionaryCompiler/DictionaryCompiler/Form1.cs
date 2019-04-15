@@ -22,6 +22,8 @@ namespace DictionaryCompiler
         public string PathIn { get; set; }
         public string PathOut { get; set; }
 
+        public bool fail = false;
+
         public IncludeStatus includeStatus = new IncludeStatus();
         public List<string> dic = new List<string>();
         public Stopwatch sw = new Stopwatch();
@@ -119,6 +121,7 @@ namespace DictionaryCompiler
 
         private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
+            fail = false;
             var worker = sender as BackgroundWorker;
             worker.ReportProgress(0);
 
@@ -155,16 +158,18 @@ namespace DictionaryCompiler
                         dic.Add(word.ConcatenateProperties());
                         worker.ReportProgress(count);
                     }
+                    
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message + " (compileScript.1)");
-                    dic.Add(ex.Message);
+                    MessageBox.Show(ex.Message, "(compileScript.1)", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    fail = true;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + " (compileScript.0)");
+                MessageBox.Show(ex.Message, "(compileScript.0)", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                fail = true;
             }
         }
 
@@ -172,12 +177,12 @@ namespace DictionaryCompiler
         {
             sw.Stop();
             sw.Reset();
-            materialTabControl1.SelectTab("tabPage3");
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            if (fail)
+                materialTabControl1.SelectTab("tabPage1");
+            else{
+                materialTabControl1.SelectTab("tabPage3");
+                fillGrid();
+            }
         }
 
         private void browseSrcPathBtn_Click(object sender, EventArgs e)
@@ -194,32 +199,37 @@ namespace DictionaryCompiler
             }
         }
 
-        private void viewBtn_Click(object sender, EventArgs e)
+        private void fillGrid()
         {
-            ViewForm viewForm = new ViewForm();
             int c = 0;
-            if (includeStatus.CountCheck){
-                viewForm.dataGridView1.Columns.Add("checkC", "#");
+            if (includeStatus.CountCheck)
+            {
+                dataGridView1.Columns.Add("checkC", "#");
                 c++;
             }
-            if (includeStatus.EngWordsCheck){
-                viewForm.dataGridView1.Columns.Add("firstC", "Original");
+            if (includeStatus.EngWordsCheck)
+            {
+                dataGridView1.Columns.Add("firstC", "Original");
                 c++;
             }
-            if (includeStatus.SloWordsCheck){
-                viewForm.dataGridView1.Columns.Add("secondC", langTextBox.Text);
+            if (includeStatus.SloWordsCheck)
+            {
+                dataGridView1.Columns.Add("secondC", langTextBox.Text);
                 c++;
             }
-            if (includeStatus.MeaningCheck){
-                viewForm.dataGridView1.Columns.Add("meaningC", "Meaning");
+            if (includeStatus.MeaningCheck)
+            {
+                dataGridView1.Columns.Add("meaningC", "Meaning");
                 c++;
             }
-            if (includeStatus.PronCheck){
-                viewForm.dataGridView1.Columns.Add("pronC", "Pronunciation");
+            if (includeStatus.PronCheck)
+            {
+                dataGridView1.Columns.Add("pronC", "Pronunciation");
                 c++;
             }
-            if (includeStatus.UrlCheck){
-                viewForm.dataGridView1.Columns.Add("urlC", "URL");
+            if (includeStatus.UrlCheck)
+            {
+                dataGridView1.Columns.Add("urlC", "URL");
                 c++;
             }
             foreach (var item in dic)
@@ -227,33 +237,35 @@ namespace DictionaryCompiler
                 string[] s = item.Split(';');
 
                 if (c == 1)
-                    viewForm.dataGridView1.Rows.Add(s[0]);
+                    dataGridView1.Rows.Add(s[0]);
                 if (c == 2)
-                    viewForm.dataGridView1.Rows.Add(s[0], s[1]);
+                    dataGridView1.Rows.Add(s[0], s[1]);
                 if (c == 3)
-                    viewForm.dataGridView1.Rows.Add(s[0], s[1], s[2]);
+                    dataGridView1.Rows.Add(s[0], s[1], s[2]);
                 if (c == 4)
-                    viewForm.dataGridView1.Rows.Add(s[0], s[1], s[2], s[3]);
+                    dataGridView1.Rows.Add(s[0], s[1], s[2], s[3]);
                 if (c == 5)
-                    viewForm.dataGridView1.Rows.Add(s[0], s[1], s[2], s[3], s[4]);
+                    dataGridView1.Rows.Add(s[0], s[1], s[2], s[3], s[4]);
                 if (c == 6)
-                    viewForm.dataGridView1.Rows.Add(s[0], s[1], s[2], s[3], s[4], s[5]);
+                    dataGridView1.Rows.Add(s[0], s[1], s[2], s[3], s[4], s[5]);
             }
-            if (viewForm.ShowDialog() == DialogResult.Yes) { }
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
 
-        private void exportBtn_Click(object sender, EventArgs e)
+        private void exportBtn_Click_1(object sender, EventArgs e)
         {
-            ExportForm exportForm = new ExportForm();
             PathOut = outputTextBox.Text + "\\";
 
             if (dic.Count > 0)
             {
-                exportForm.Text = "Export status";
                 if (!txtCheck.Checked && !xlsxCheck.Checked)
                     MessageBox.Show("Please select one of the export options!");
+                
                 else
                 {
+                    ExportForm exportForm = new ExportForm();
+                    exportForm.Text = "Export status";
+
                     if (txtCheck.Checked)
                     {
                         if (overwriteCheck.Checked)
@@ -271,7 +283,55 @@ namespace DictionaryCompiler
                     {
                         if (overwriteCheck.Checked)
                         {
-                            ToExcel.ExportToExcel(PathOut, outputNameTextBox.Text);
+                            //ToExcel.ExportToExcel(PathOut, outputNameTextBox.Text);
+
+                            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+                            excel.DisplayAlerts = false;
+
+                            try
+                            {
+
+                                worksheet = workbook.ActiveSheet;
+
+                                worksheet.Name = "ExportedFromDatGrid";
+
+                                int cellRowIndex = 1;
+                                int cellColumnIndex = 1;
+
+                                //Loop through each row and read value from each column. 
+                                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                                {
+                                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                                    {
+                                        // Excel index starts from 1,1. As first Row would have the Column headers, adding a condition check. 
+                                        if (cellRowIndex == 1)
+                                        {
+                                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dataGridView1.Columns[j].HeaderText;
+                                        }
+                                        else
+                                        {
+                                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                                        }
+                                        cellColumnIndex++;
+                                    }
+                                    cellColumnIndex = 1;
+                                    cellRowIndex++;
+                                }
+
+                                workbook.SaveAs(PathOut + outputNameTextBox.Text + ".xlsx");
+                            }
+                            catch (System.Exception ex)
+                            {
+                                MessageBox.Show(ex.Message, "(xlsx-exportScript.0)", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                excel.Quit();
+                                workbook = null;
+                                excel = null;
+                            }
                             exportForm.xlsxStatusLabel.Text = "Success!";
                         }
                         if (File.Exists(PathOut + outputNameTextBox.Text + ".xlsx") && !overwriteCheck.Checked)
@@ -279,12 +339,11 @@ namespace DictionaryCompiler
                     }
                     else
                         exportForm.xlsxStatusLabel.Text = "Not selected!";
+                    if (exportForm.ShowDialog() == DialogResult.Yes) { Process.Start("explorer.exe", PathOut); }
                 }
             }
             else
-                exportForm.Text = "Dictionary is empty!";
-
-            if (exportForm.ShowDialog() == DialogResult.Yes) { Process.Start("explorer.exe", PathOut); }
+                MessageBox.Show("The dictionary is empty!", "(exportScript.0)", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void browseOutPathBtn_Click(object sender, EventArgs e)
@@ -313,8 +372,7 @@ namespace DictionaryCompiler
 
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
-            AboutForm aboutForm = new AboutForm();
-            aboutForm.ShowDialog();
+            Process.Start("https://github.com/MartinKogovsek/DictionaryCompiler/releases");
         }
 
         private void materialRaisedButton1_Click_1(object sender, EventArgs e)

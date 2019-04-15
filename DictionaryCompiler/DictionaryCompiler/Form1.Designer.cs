@@ -59,10 +59,11 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.progressBar = new CircularProgressBar.CircularProgressBar();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.overwriteCheck = new MaterialSkin.Controls.MaterialCheckBox();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.outputNameTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.viewBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.xlsxCheck = new MaterialSkin.Controls.MaterialCheckBox();
             this.exportBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialDivider6 = new MaterialSkin.Controls.MaterialDivider();
@@ -82,6 +83,8 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,6 +96,7 @@
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Controls.Add(this.tabPage2);
             this.materialTabControl1.Controls.Add(this.tabPage3);
+            this.materialTabControl1.Controls.Add(this.tabPage4);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Location = new System.Drawing.Point(-1, 93);
             this.materialTabControl1.Margin = new System.Windows.Forms.Padding(0);
@@ -279,9 +283,9 @@
             this.pronCheck.MouseState = MaterialSkin.MouseState.HOVER;
             this.pronCheck.Name = "pronCheck";
             this.pronCheck.Ripple = true;
-            this.pronCheck.Size = new System.Drawing.Size(123, 30);
+            this.pronCheck.Size = new System.Drawing.Size(116, 30);
             this.pronCheck.TabIndex = 25;
-            this.pronCheck.Text = "Pronaunciation";
+            this.pronCheck.Text = "Pronunciation";
             this.pronCheck.UseVisualStyleBackColor = true;
             // 
             // sloWordsCheck
@@ -553,27 +557,46 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
-            this.tabPage3.Controls.Add(this.overwriteCheck);
-            this.tabPage3.Controls.Add(this.materialLabel10);
-            this.tabPage3.Controls.Add(this.outputNameTextBox);
-            this.tabPage3.Controls.Add(this.viewBtn);
-            this.tabPage3.Controls.Add(this.xlsxCheck);
-            this.tabPage3.Controls.Add(this.exportBtn);
-            this.tabPage3.Controls.Add(this.materialDivider6);
-            this.tabPage3.Controls.Add(this.materialLabel7);
-            this.tabPage3.Controls.Add(this.materialDivider5);
-            this.tabPage3.Controls.Add(this.txtCheck);
-            this.tabPage3.Controls.Add(this.browseOutPathBtn);
-            this.tabPage3.Controls.Add(this.materialLabel6);
-            this.tabPage3.Controls.Add(this.outputTextBox);
-            this.tabPage3.Controls.Add(this.materialLabel5);
-            this.tabPage3.Controls.Add(this.materialDivider4);
+            this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(718, 314);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Data";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(714, 331);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.White;
+            this.tabPage4.Controls.Add(this.overwriteCheck);
+            this.tabPage4.Controls.Add(this.materialLabel10);
+            this.tabPage4.Controls.Add(this.outputNameTextBox);
+            this.tabPage4.Controls.Add(this.xlsxCheck);
+            this.tabPage4.Controls.Add(this.exportBtn);
+            this.tabPage4.Controls.Add(this.materialDivider6);
+            this.tabPage4.Controls.Add(this.materialLabel7);
+            this.tabPage4.Controls.Add(this.materialDivider5);
+            this.tabPage4.Controls.Add(this.txtCheck);
+            this.tabPage4.Controls.Add(this.browseOutPathBtn);
+            this.tabPage4.Controls.Add(this.materialLabel6);
+            this.tabPage4.Controls.Add(this.outputTextBox);
+            this.tabPage4.Controls.Add(this.materialLabel5);
+            this.tabPage4.Controls.Add(this.materialDivider4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(718, 314);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Export";
             // 
             // overwriteCheck
             // 
@@ -582,14 +605,14 @@
             this.overwriteCheck.CheckState = System.Windows.Forms.CheckState.Checked;
             this.overwriteCheck.Depth = 0;
             this.overwriteCheck.Font = new System.Drawing.Font("Roboto", 10F);
-            this.overwriteCheck.Location = new System.Drawing.Point(307, 105);
+            this.overwriteCheck.Location = new System.Drawing.Point(308, 105);
             this.overwriteCheck.Margin = new System.Windows.Forms.Padding(0);
             this.overwriteCheck.MouseLocation = new System.Drawing.Point(-1, -1);
             this.overwriteCheck.MouseState = MaterialSkin.MouseState.HOVER;
             this.overwriteCheck.Name = "overwriteCheck";
             this.overwriteCheck.Ripple = true;
             this.overwriteCheck.Size = new System.Drawing.Size(89, 30);
-            this.overwriteCheck.TabIndex = 36;
+            this.overwriteCheck.TabIndex = 51;
             this.overwriteCheck.Text = "Overwrite";
             this.overwriteCheck.UseVisualStyleBackColor = true;
             // 
@@ -599,18 +622,18 @@
             this.materialLabel10.Depth = 0;
             this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel10.Location = new System.Drawing.Point(9, 116);
+            this.materialLabel10.Location = new System.Drawing.Point(10, 116);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
             this.materialLabel10.Size = new System.Drawing.Size(122, 19);
-            this.materialLabel10.TabIndex = 35;
+            this.materialLabel10.TabIndex = 50;
             this.materialLabel10.Text = "Export file name:";
             // 
             // outputNameTextBox
             // 
             this.outputNameTextBox.Depth = 0;
             this.outputNameTextBox.Hint = "";
-            this.outputNameTextBox.Location = new System.Drawing.Point(137, 112);
+            this.outputNameTextBox.Location = new System.Drawing.Point(138, 112);
             this.outputNameTextBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.outputNameTextBox.Name = "outputNameTextBox";
             this.outputNameTextBox.PasswordChar = '\0';
@@ -618,62 +641,48 @@
             this.outputNameTextBox.SelectionLength = 0;
             this.outputNameTextBox.SelectionStart = 0;
             this.outputNameTextBox.Size = new System.Drawing.Size(146, 23);
-            this.outputNameTextBox.TabIndex = 34;
+            this.outputNameTextBox.TabIndex = 49;
             this.outputNameTextBox.Text = "Dictionary";
             this.outputNameTextBox.UseSystemPasswordChar = false;
-            // 
-            // viewBtn
-            // 
-            this.viewBtn.Depth = 0;
-            this.viewBtn.Location = new System.Drawing.Point(532, 278);
-            this.viewBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.viewBtn.Name = "viewBtn";
-            this.viewBtn.Primary = true;
-            this.viewBtn.Size = new System.Drawing.Size(75, 36);
-            this.viewBtn.TabIndex = 33;
-            this.viewBtn.Text = "View";
-            this.viewBtn.UseVisualStyleBackColor = true;
-            this.viewBtn.Click += new System.EventHandler(this.viewBtn_Click);
             // 
             // xlsxCheck
             // 
             this.xlsxCheck.AutoSize = true;
             this.xlsxCheck.Depth = 0;
-            this.xlsxCheck.Enabled = false;
             this.xlsxCheck.Font = new System.Drawing.Font("Roboto", 10F);
-            this.xlsxCheck.Location = new System.Drawing.Point(151, 281);
+            this.xlsxCheck.Location = new System.Drawing.Point(152, 281);
             this.xlsxCheck.Margin = new System.Windows.Forms.Padding(0);
             this.xlsxCheck.MouseLocation = new System.Drawing.Point(-1, -1);
             this.xlsxCheck.MouseState = MaterialSkin.MouseState.HOVER;
             this.xlsxCheck.Name = "xlsxCheck";
             this.xlsxCheck.Ripple = true;
             this.xlsxCheck.Size = new System.Drawing.Size(123, 30);
-            this.xlsxCheck.TabIndex = 32;
+            this.xlsxCheck.TabIndex = 47;
             this.xlsxCheck.Text = "Export as excel";
             this.xlsxCheck.UseVisualStyleBackColor = true;
             // 
             // exportBtn
             // 
             this.exportBtn.Depth = 0;
-            this.exportBtn.Location = new System.Drawing.Point(613, 278);
+            this.exportBtn.Location = new System.Drawing.Point(614, 278);
             this.exportBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.exportBtn.Name = "exportBtn";
             this.exportBtn.Primary = true;
             this.exportBtn.Size = new System.Drawing.Size(96, 36);
-            this.exportBtn.TabIndex = 31;
+            this.exportBtn.TabIndex = 46;
             this.exportBtn.Text = "Export";
             this.exportBtn.UseVisualStyleBackColor = true;
-            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click_1);
             // 
             // materialDivider6
             // 
             this.materialDivider6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider6.Depth = 0;
-            this.materialDivider6.Location = new System.Drawing.Point(-16, 247);
+            this.materialDivider6.Location = new System.Drawing.Point(-15, 247);
             this.materialDivider6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider6.Name = "materialDivider6";
             this.materialDivider6.Size = new System.Drawing.Size(748, 25);
-            this.materialDivider6.TabIndex = 30;
+            this.materialDivider6.TabIndex = 45;
             this.materialDivider6.Text = "materialDivider6";
             // 
             // materialLabel7
@@ -682,22 +691,22 @@
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel7.Location = new System.Drawing.Point(8, 75);
+            this.materialLabel7.Location = new System.Drawing.Point(9, 75);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
             this.materialLabel7.Size = new System.Drawing.Size(110, 19);
-            this.materialLabel7.TabIndex = 27;
+            this.materialLabel7.TabIndex = 43;
             this.materialLabel7.Text = "Export settings";
             // 
             // materialDivider5
             // 
             this.materialDivider5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider5.Depth = 0;
-            this.materialDivider5.Location = new System.Drawing.Point(-4, 69);
+            this.materialDivider5.Location = new System.Drawing.Point(-3, 69);
             this.materialDivider5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider5.Name = "materialDivider5";
             this.materialDivider5.Size = new System.Drawing.Size(722, 25);
-            this.materialDivider5.TabIndex = 28;
+            this.materialDivider5.TabIndex = 44;
             this.materialDivider5.Text = "materialDivider5";
             // 
             // txtCheck
@@ -707,29 +716,28 @@
             this.txtCheck.CheckState = System.Windows.Forms.CheckState.Checked;
             this.txtCheck.Depth = 0;
             this.txtCheck.Font = new System.Drawing.Font("Roboto", 10F);
-            this.txtCheck.Location = new System.Drawing.Point(20, 281);
+            this.txtCheck.Location = new System.Drawing.Point(21, 281);
             this.txtCheck.Margin = new System.Windows.Forms.Padding(0);
             this.txtCheck.MouseLocation = new System.Drawing.Point(-1, -1);
             this.txtCheck.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCheck.Name = "txtCheck";
             this.txtCheck.Ripple = true;
             this.txtCheck.Size = new System.Drawing.Size(107, 30);
-            this.txtCheck.TabIndex = 26;
+            this.txtCheck.TabIndex = 42;
             this.txtCheck.Text = "Export as txt";
             this.txtCheck.UseVisualStyleBackColor = true;
             // 
             // browseOutPathBtn
             // 
             this.browseOutPathBtn.Depth = 0;
-            this.browseOutPathBtn.Location = new System.Drawing.Point(637, 31);
+            this.browseOutPathBtn.Location = new System.Drawing.Point(638, 31);
             this.browseOutPathBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.browseOutPathBtn.Name = "browseOutPathBtn";
             this.browseOutPathBtn.Primary = true;
             this.browseOutPathBtn.Size = new System.Drawing.Size(75, 23);
-            this.browseOutPathBtn.TabIndex = 24;
+            this.browseOutPathBtn.TabIndex = 41;
             this.browseOutPathBtn.Text = "Browse";
             this.browseOutPathBtn.UseVisualStyleBackColor = true;
-            this.browseOutPathBtn.Click += new System.EventHandler(this.browseOutPathBtn_Click);
             // 
             // materialLabel6
             // 
@@ -737,18 +745,18 @@
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel6.Location = new System.Drawing.Point(5, 35);
+            this.materialLabel6.Location = new System.Drawing.Point(6, 35);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(94, 19);
-            this.materialLabel6.TabIndex = 23;
+            this.materialLabel6.TabIndex = 40;
             this.materialLabel6.Text = " Output path:";
             // 
             // outputTextBox
             // 
             this.outputTextBox.Depth = 0;
             this.outputTextBox.Hint = "";
-            this.outputTextBox.Location = new System.Drawing.Point(107, 31);
+            this.outputTextBox.Location = new System.Drawing.Point(108, 31);
             this.outputTextBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.outputTextBox.Name = "outputTextBox";
             this.outputTextBox.PasswordChar = '\0';
@@ -756,7 +764,7 @@
             this.outputTextBox.SelectionLength = 0;
             this.outputTextBox.SelectionStart = 0;
             this.outputTextBox.Size = new System.Drawing.Size(524, 23);
-            this.outputTextBox.TabIndex = 22;
+            this.outputTextBox.TabIndex = 39;
             this.outputTextBox.Text = "materialSingleLineTextField1";
             this.outputTextBox.UseSystemPasswordChar = false;
             // 
@@ -766,22 +774,22 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(9, 6);
+            this.materialLabel5.Location = new System.Drawing.Point(10, 6);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(86, 19);
-            this.materialLabel5.TabIndex = 20;
+            this.materialLabel5.TabIndex = 37;
             this.materialLabel5.Text = "Output path";
             // 
             // materialDivider4
             // 
             this.materialDivider4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider4.Depth = 0;
-            this.materialDivider4.Location = new System.Drawing.Point(0, 0);
+            this.materialDivider4.Location = new System.Drawing.Point(1, 0);
             this.materialDivider4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider4.Name = "materialDivider4";
             this.materialDivider4.Size = new System.Drawing.Size(718, 25);
-            this.materialDivider4.TabIndex = 21;
+            this.materialDivider4.TabIndex = 38;
             this.materialDivider4.Text = "materialDivider4";
             // 
             // materialTabSelector1
@@ -837,17 +845,19 @@
             this.Controls.Add(this.materialTabControl1);
             this.Controls.Add(this.materialDivider3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dictionary Compiler";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -882,29 +892,30 @@
         private MaterialSkin.Controls.MaterialRaisedButton compileBtn;
         private MaterialSkin.Controls.MaterialDivider materialDivider3;
         private CircularProgressBar.CircularProgressBar progressBar;
-        private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private MaterialSkin.Controls.MaterialDivider materialDivider4;
-        private MaterialSkin.Controls.MaterialRaisedButton browseOutPathBtn;
-        private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private MaterialSkin.Controls.MaterialRaisedButton exportBtn;
-        private MaterialSkin.Controls.MaterialDivider materialDivider6;
-        private MaterialSkin.Controls.MaterialLabel materialLabel7;
-        private MaterialSkin.Controls.MaterialDivider materialDivider5;
-        private MaterialSkin.Controls.MaterialCheckBox txtCheck;
-        private MaterialSkin.Controls.MaterialRaisedButton viewBtn;
-        private MaterialSkin.Controls.MaterialCheckBox xlsxCheck;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private MaterialSkin.Controls.MaterialFlatButton openKeyConfigBtn;
         private MaterialSkin.Controls.MaterialFlatButton openWordsFileBtn;
         private MaterialSkin.Controls.MaterialRaisedButton langBtn;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
         private MaterialSkin.Controls.MaterialSingleLineTextField langTextBox;
-        private MaterialSkin.Controls.MaterialLabel materialLabel10;
-        private MaterialSkin.Controls.MaterialCheckBox overwriteCheck;
-        private MaterialSkin.Controls.MaterialSingleLineTextField outputTextBox;
-        public MaterialSkin.Controls.MaterialSingleLineTextField outputNameTextBox;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private System.Windows.Forms.TabPage tabPage4;
+        private MaterialSkin.Controls.MaterialCheckBox overwriteCheck;
+        private MaterialSkin.Controls.MaterialLabel materialLabel10;
+        public MaterialSkin.Controls.MaterialSingleLineTextField outputNameTextBox;
+        private MaterialSkin.Controls.MaterialCheckBox xlsxCheck;
+        private MaterialSkin.Controls.MaterialRaisedButton exportBtn;
+        private MaterialSkin.Controls.MaterialDivider materialDivider6;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialDivider materialDivider5;
+        private MaterialSkin.Controls.MaterialCheckBox txtCheck;
+        private MaterialSkin.Controls.MaterialRaisedButton browseOutPathBtn;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private MaterialSkin.Controls.MaterialSingleLineTextField outputTextBox;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private MaterialSkin.Controls.MaterialDivider materialDivider4;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

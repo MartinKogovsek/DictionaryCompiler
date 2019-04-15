@@ -104,15 +104,14 @@ C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\Dic
 C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\bin\Debug\System.Interactive.Async.xml
 C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\bin\Debug\WinFormAnimation.xml
 C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\obj\Debug\DictionaryCompiler.csprojAssemblyReference.cache
-C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\obj\Debug\DictionaryCompiler.AboutForm.resources
 C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\obj\Debug\DictionaryCompiler.ExportForm.resources
 C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\obj\Debug\DictionaryCompiler.Form1.resources
 C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\obj\Debug\DictionaryCompiler.KeysForm.resources
 C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\obj\Debug\DictionaryCompiler.LangForm.resources
 C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\obj\Debug\DictionaryCompiler.Properties.Resources.resources
-C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\obj\Debug\DictionaryCompiler.ViewForm.resources
 C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\obj\Debug\DictionaryCompiler.csproj.GenerateResource.cache
 C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\obj\Debug\DictionaryCompiler.csproj.CoreCompileInputs.cache
 C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\obj\Debug\DictionaryCompiler.csproj.CopyComplete
 C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\obj\Debug\DictionaryCompiler.exe
 C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\obj\Debug\DictionaryCompiler.pdb
+C:\Users\marti\OneDrive\Desktop\GitHub\DictionaryCompiler\DictionaryCompiler\DictionaryCompiler\obj\Debug\DictionaryCompiler.csproj.ResolveComReference.cache
